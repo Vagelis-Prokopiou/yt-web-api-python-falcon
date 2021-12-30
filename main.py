@@ -12,15 +12,12 @@ def getUsers():
     users = []
     for index in range(1, 1001):
         strIndex = str(index)
-        firstName = "FirstName" + strIndex
-        lastName = "LastName" + strIndex
-        framework = "Python (Falcon)"
         users.append({
             "index": index,
-            "FirstName": firstName,
-            "LastName": lastName,
+            "FirstName": "FirstName" + strIndex,
+            "LastName": "LastName" + strIndex,
             "age": 25,
-            "framework": framework,
+            "framework": "Python (Falcon)",
         })
     return users
 
