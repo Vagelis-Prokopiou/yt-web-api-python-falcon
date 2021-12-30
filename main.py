@@ -1,14 +1,12 @@
-# Run: uvicorn main:app --host 127.0.0.1 --port 8000
+# pip install falcon
+# pip install uvicorn[standard]
+# Run: uvicorn main:app --host 127.0.0.1 --port 8081 --workers 8
 
 import json
 import falcon
 import falcon.asgi
 
-
-# falcon.asgi.App instances are callable ASGI apps...
-# in larger applications the app is created in a separate file
 app = falcon.asgi.App()
-
 
 def getUsers():
     users = []
@@ -16,7 +14,7 @@ def getUsers():
         strIndex = str(index)
         firstName = "FirstName" + strIndex
         lastName = "LastName" + strIndex
-        framework = "Python (FastAPI)"
+        framework = "Python (Falcon)"
         users.append({
             "index": index,
             "FirstName": firstName,
